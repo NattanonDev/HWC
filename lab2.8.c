@@ -13,38 +13,37 @@ int main() {
 
     for (i = 0; i < N; i++) {
 
-        if (scanf("%d %d %d %d",
-                  &studentId, &score, &totalClasses, &absentClasses) != 4) {
+        if (scanf("%d %d %d %d", &studentId, &score, &totalClasses, &absentClasses) != 4) {
             break;
         }
 
-        attendancePercent =
-            (float)(totalClasses - absentClasses) / totalClasses * 100.0;
+        attendancePercent = (float)(totalClasses - absentClasses) / totalClasses * 100.0;
 
-        printf("Student %d: ", studentId);
+        int passScore = (score >= 50);
+        int passAttend = (attendancePercent >= 75.0);
 
-        if (score >= 50 && attendancePercent >= 75.0) {
-            printf("PASS\n");
+        if (passScore && passAttend) {
+            printf("Student %d: PASS\n", studentId);
             passCount++;
         }
         else {
-            printf("FAIL - ");
-
-            if (score < 50 && attendancePercent < 75.0) {
+            printf("Student %d: FAIL - ", studentId);
+            
+            if (!passScore && !passAttend) {
                 printf("Both Score and Attendance\n");
             }
-            else if (score < 50) {
-                printf("Score\n");
+            else if (!passScore) {
+                printf("Low Score\n");
             }
-            else {
-                printf("Attendance\n");
+            else { 
+                printf("Low Attendance (%.2f%%)\n", attendancePercent);
             }
 
             failCount++;
         }
     }
 
-    printf("\n--- Summary ---\n");
+    printf("--- Summary ---\n");
     printf("Total PASS: %d\n", passCount);
     printf("Total FAIL: %d\n", failCount);
 
