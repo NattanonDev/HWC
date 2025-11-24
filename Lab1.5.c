@@ -1,39 +1,25 @@
-#include <stdio.h>   // ไลบรารีสำหรับ printf และ scanf
+#include <stdio.h>
 
-int main() {
-    int number;
-    int evenSum = 0;   // ใช้เก็บผลรวมของเลขคู่
-    int oddSum = 0;    // ใช้เก็บผลรวมของเลขคี่
+int main(){
+    int n;
+    int even=0, odd = 0;
 
-    // รับตัวเลขตัวแรกก่อนเริ่มลูป
-    // ถ้ารับค่าไม่ได้ ให้จบโปรแกรม
-    if (scanf("%d", &number) != 1) {
+    if(scanf("%d",&n)!=1){
         return 1;
     }
 
-    /*
-        ลูปนี้จะทำงานไปเรื่อย ๆ ตราบใดที่ number ไม่ใช่ 0
-        ถ้าเป็นเลขคู่ (หาร 2 ลงตัว) → สะสมใน evenSum
-        ถ้าเป็นเลขคี่ → สะสมใน oddSum
-    */
-    while (number != 0) {
+    while(n!=0){
 
-        // เช็คเลขคู่หรือเลขคี่
-        if (number % 2 == 0) {
-            evenSum += number;   // สะสมเลขคู่
-        } else {
-            oddSum += number;    // สะสมเลขคี่
+        if(n%2==0){
+            even = even + n;
+        }else{
+            odd = odd + n;
         }
 
-        // รับค่าตัวเลขถัดไปที่ท้ายลูป
-        if (scanf("%d", &number) != 1) {
-            break;   // ถ้ารับค่าไม่ได้ ให้ออกจากลูป
-        }
+        scanf("%d",&n);
     }
 
-    // แสดงผลรวมของเลขคู่และเลขคี่
-    printf("Even Sum: %d\n", evenSum);
-    printf("Odd Sum: %d\n", oddSum);
-
-    return 0;   // จบโปรแกรม
+    printf("Even Sum: %d\n",even);
+    printf("Odd Sum: %d\n",odd);
+    return 0;
 }
