@@ -27,7 +27,9 @@ int main() {
     for (i = 0; i < N; i++) {
 
         if (students[i].score >= 60.0) {
-            return 1;
+            passCount++;
+        }else{
+            
         }
     }
 
