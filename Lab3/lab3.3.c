@@ -9,6 +9,7 @@ struct Student {
 int main() {
     int N, i;
     int passCount = 0;
+    int failCount = 0;
 
     if (scanf("%d", &N) != 1) {
         return 1;
