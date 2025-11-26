@@ -26,7 +26,7 @@ int main() {
 
     for (i = 0; i < N; i++) {
 
-        if (scanf("%d %f %s", &students[i].studentId, &students[i].score, students[i].name) != 3) {
+        if (students[i].score >= 60.0) {
             return 1;
         }
     }
