@@ -34,7 +34,7 @@ int main() {
     }
 
     printf("Pass Count: %d\n", passCount);
-    printf("Pass Count: %d\n", passCount);
+    printf("Fail Count: %d\n", failCount);
 
     return 0;
 }
