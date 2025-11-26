@@ -8,8 +8,6 @@ struct Student {
 
 int main() {
     int N, i;
-    int passCount = 0;
-    int failCount = 0;
 
     if (scanf("%d", &N) != 1) {
         return 1;
@@ -25,6 +23,10 @@ int main() {
         }
         totalScore += students[i].score;
     }
+
+    // for (i = 0; i < N; i++) {
+    //     printf("ID: %d, Name: %s, Score: %.2f\n", students[i].studentId, students[i].name, students[i].score);
+    // }
 
     printf("Average Score: %.2f\n", totalScore / N);
 
