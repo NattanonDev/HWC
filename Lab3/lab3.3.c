@@ -16,25 +16,17 @@ int main() {
     }
 
     struct Student students[1000];
+    float totalScore = 0.0;
 
     for (i = 0; i < N; i++) {
 
         if (scanf("%d %f %s", &students[i].studentId, &students[i].score, students[i].name) != 3) {
             return 1;
         }
+        totalScore += students[i].score;
     }
 
-    for (i = 0; i < N; i++) {
-
-        if (students[i].score >= 60.0) {
-            passCount++;
-        }else{
-            failCount++;
-        }
-    }
-
-    printf("Pass Count: %d\n", passCount);
-    printf("Fail Count: %d\n", failCount);
+    printf("Average Score: %.2f\n", totalScore / N);
 
     return 0;
 }
