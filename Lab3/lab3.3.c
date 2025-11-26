@@ -24,10 +24,6 @@ int main() {
         totalScore += students[i].score;
     }
 
-    // for (i = 0; i < N; i++) {
-    //     printf("ID: %d, Name: %s, Score: %.2f\n", students[i].studentId, students[i].name, students[i].score);
-    // }
-
     printf("Average Score: %.2f\n", totalScore / N);
 
     return 0;
