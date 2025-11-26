@@ -8,7 +8,7 @@ struct Student {
 
 int main() {
     int N, i;
-    int
+    int passCount = 0;
 
     if (scanf("%d", &N) != 1) {
         return 1;
