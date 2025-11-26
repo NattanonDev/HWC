@@ -29,11 +29,12 @@ int main() {
         if (students[i].score >= 60.0) {
             passCount++;
         }else{
-            
+            failCount++;
         }
     }
 
-    // printf("Average Score: %.2f\n", totalScore / N);
+    printf("Pass Count: %d\n", passCount);
+    printf("Pass Count: %d\n", passCount);
 
     return 0;
 }
