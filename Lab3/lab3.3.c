@@ -28,5 +28,7 @@ int main() {
         printf("ID: %d, Name: %s, Score: %.2f\n", students[i].studentId, students[i].name, students[i].score);
     }
 
+    printf("Average Score: %.2f\n", totalScore / N);
+
     return 0;
 }
