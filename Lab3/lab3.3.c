@@ -8,6 +8,7 @@ struct Student {
 
 int main() {
     int N, i;
+    int
 
     if (scanf("%d", &N) != 1) {
         return 1;
