@@ -1,5 +1,5 @@
 {
-    "gitdoc.enabled": false,
+    "gitdoc.enabled": true,
     "gitdoc.autoCommitDelay": 5000,
     "gitdoc.excludeBranches": [
 
