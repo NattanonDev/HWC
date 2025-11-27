@@ -8,7 +8,7 @@ int main() {
     int countOther = 0;
     int i;
 
-    if (scanf("%s", text) != 1) {   // ใช้ตาม Pre-code เดิม
+    if (scanf("%s", text) != 1) {
         return 1;
     }
 
