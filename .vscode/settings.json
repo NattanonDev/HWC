@@ -1,4 +1,7 @@
 {
     "gitdoc.enabled": true,
-    "gitdoc.autoCommitDelay": 5000
+    "gitdoc.autoCommitDelay": 5000,
+    "gitdoc.excludeBranches": [
+
+    ]
 }
