@@ -15,7 +15,7 @@ int main() {
         return 1;
     }
 
-    struct Student students[1000];
+    struct Student students[N];
 
     for (i = 0; i < N; i++) {
 

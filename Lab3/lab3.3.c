@@ -13,7 +13,7 @@ int main() {
         return 1;
     }
 
-    struct Student students[1000];
+    struct Student students[N];
     float totalScore = 0.0;
 
     for (i = 0; i < N; i++) {
