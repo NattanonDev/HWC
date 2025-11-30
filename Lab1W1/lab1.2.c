@@ -21,7 +21,7 @@ int main() {
     printf("Enter number of elements: ");
     scanf("%d", &num);
 
-    data = (int *)malloc(num * sizeof(int));   // จองหน่วยความจำ
+    data = (int *)malloc(num * sizeof(int));
 
     GetSet(data, &num);
 
@@ -30,6 +30,6 @@ int main() {
         printf("data[%d] = %d\n", i, data[i]);
     }
 
-    free(data);  // คืนหน่วยความจำ
+    free(data);
     return 0;
 }
