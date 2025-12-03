@@ -24,14 +24,14 @@ void GetSet(int data[], int *num)
 
     printf("Enter number of elements: ");
     if (scanf("%d", num) != 1) {
-        printf("No number goodbye!\n");
+        printf("No number!\n");
         return;
     }
 
     for (i = 0; i < *num; i++) {
         printf("Enter Number %d: ", i + 1);
         if (scanf("%d", &data[i]) != 1) {
-            printf("No number goodbye!\n");
+            printf("No number!\n");
             return;
         }
     }
