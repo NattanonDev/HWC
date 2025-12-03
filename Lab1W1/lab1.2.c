@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void GetSet(int **data, int *n);  // *** ต้องส่ง pointer to pointer
+void GetSet(int **data, int *n);
 
 void GetSet(int **data, int *n) {
     int i;
