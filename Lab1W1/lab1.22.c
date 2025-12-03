@@ -7,14 +7,14 @@ void GetSet(int a[], int *n)
 
     printf("Enter number of elements: ");
     if (scanf("%d", n) != 1) {
-        printf("No number goodbye!\n");
+        printf("No number!\n");
         return;
     }
 
     for (i = 0; i < *n; i++) {
         printf("Enter Number %d: ", i + 1);
         if (scanf("%d", &a[i]) != 1) {
-            printf("No number goodbye!\n");
+            printf("No number!\n");
             return;
         }
     }
