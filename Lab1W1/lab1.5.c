@@ -1,44 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int GetSet(int **a)
+void GetMatrix(int **value, int *row, int *col)
 {
-    int n, i;
+    int r, c, i;
     int *arr;
 
-    printf("Enter number of elements: ");
-    if (scanf("%d", &n) != 1) {
+    printf("Enter number of rows: ");
+    if (scanf("%d", &r) != 1) {
         printf("No number!\n");
-        return 0;
+        return;
     }
 
-    arr = (int *)malloc(n * sizeof(int));
+    printf("Enter number of columns: ");
+    if (scanf("%d", &c) != 1) {
+        printf("No number!\n");
+        return;
+    }
+
+    arr = (int *)malloc(r * c * sizeof(int));
     if (arr == NULL) {
-        return 0;
+        return;
     }
 
-    for (i = 0; i < n; i++) {
-        printf("Enter Number %d: ", i + 1);
+    for (i = 0; i < r * c; i++) {
+        printf("Enter value %d: ", i + 1);
         if (scanf("%d", &arr[i]) != 1) {
             printf("No number!\n");
             free(arr);
-            return 0;
+            return;
         }
     }
 
-    *a = arr;
-    return n;
+    *value = arr;
+    *row = r;
+    *col = c;
 }
 
 int main()
 {
-    int *data, num;
+    int *data, m, n;
     int i;
 
-    num = GetSet(&data);
+    GetMatrix(&data, &m, &n);
 
     printf("\n--- Result ---\n");
-    for (i = 0; i < num; i++) {
+    for (i = 0; i < m * n; i++) {
         printf("data[%d] = %d\n", i, data[i]);
     }
 
