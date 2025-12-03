@@ -34,12 +34,5 @@ void GetSet(int data[], int *num)
     for (i = 0; i < *num; i++) {
         printf("%d ", data[i]);
     }
-
-    printf("\n--- Result ---\n");
-
-    for (i = 0; i < num; i++) {
-        
-        printf("data[%d] = %d\n", i, data[i]);
-    }
     printf("\n");
 }
