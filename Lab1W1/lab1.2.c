@@ -32,8 +32,8 @@ int main()
         return 1;
     }
 
-    printf("\nResult\n");
-    
+    printf("\n--- Result ---\n");
+
     for (i = 0; i < num; i++) {
         
         printf("data[%d] = %d\n", i, data[i]);
