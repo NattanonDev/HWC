@@ -18,7 +18,7 @@ void GetSet(int data[], int *n) {
 int main() {
     int *data, num;
 
-    printf("Enter number of elements: ");
+    // printf("Enter number of elements: ");
     scanf("%d", &num);
 
     data = (int *)malloc(num * sizeof(int));
