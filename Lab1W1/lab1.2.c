@@ -33,6 +33,7 @@ int main()
     }
 
     for (i = 0; i < num; i++) {
+        printf("\nResult\n");
         printf("data[%d] = %d\n", i, data[i]);
     }
 
