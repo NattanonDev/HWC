@@ -25,11 +25,15 @@ int *GetSet(int *n)
 int main()
 {
     int *data = NULL;
-    int num;
+    int num, i;
 
     data = GetSet(&num);
     if (data == NULL) {
         return 1;
+    }
+
+    for (i = 0; i < num; i++) {
+        printf("data[%d] = %d\n", i, data[i]);
     }
 
     free(data);
