@@ -1,31 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void GetSet(int **data, int *n);
-
-void GetSet(int **data, int *n) {
+int *GetSet(int *n)
+{
     int i;
+    int *arr;
 
     printf("Enter number of elements: ");
     scanf("%d", n);
 
-    *data = (int *)malloc(*n * sizeof(int));
+    arr = (int *)malloc((*n) * sizeof(int));
+    if (arr == NULL) {
+        return NULL;
+    }
 
     for (i = 0; i < *n; i++) {
         printf("Enter value %d: ", i + 1);
-        scanf("%d", &(*data)[i]);
+        scanf("%d", &arr[i]);
     }
+
+    return arr;
 }
 
-int main() {
+int main()
+{
     int *data = NULL;
     int num;
 
-    GetSet(&data, &num);
-
-    printf("\n--- Result ---\n");
-    for (int i = 0; i < num; i++) {
-        printf("data[%d] = %d\n", i, data[i]);
+    data = GetSet(&num);
+    if (data == NULL) {
+        return 1;
     }
 
     free(data);
