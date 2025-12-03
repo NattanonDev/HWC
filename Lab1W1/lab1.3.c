@@ -10,6 +10,9 @@ int *GetSet(int *n)
     scanf("%d", n);
 
     arr = (int *)malloc((*n) * sizeof(int));
+    if (arr == NULL) {
+        return NULL;
+    }
 
     for(i = 0; i < *n; i++) {
         printf("Enter value %d: ", i + 1);
@@ -22,8 +25,14 @@ int *GetSet(int *n)
 int main()
 {
     int *data, num;
+    int i;
 
     data = GetSet(&num);
 
+    for(i = 0; i < num; i++) {
+        printf("data[%d] = %d\n", i, data[i]);
+    }
+
+    free(data);
     return 0;
 }
