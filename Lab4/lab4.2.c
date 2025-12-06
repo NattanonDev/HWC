@@ -3,26 +3,31 @@
 int main() {
     int N;
     int i;
+    int passSum = 0;
+    int failCount = 0;
 
     printf("number : ");
     if (scanf("%d", &N) != 1) {
         return 1;
     }
 
-    int scores[2];
+    int scores[N];
 
     for (i = 0; i < N; i++) {
         printf("value : ");
         if (scanf("%d", &scores[i]) != 1) {
             return 1;
         }
+
+        if (scores[i] >= 50){
+            passSum += scores[i];
+        }else{
+            failCount++;
+        }
     }
 
-    printf("\n");
-    for (i = N - 1; i >= 0; i--) {
-        printf("output : ");
-        printf("%d\n", scores[i]);
-    }
+    printf("Passing Scores Sum: %d\n", passSum);
+    printf("Failing Students Count: %d\n", failCount);
 
     return 0;
 }
