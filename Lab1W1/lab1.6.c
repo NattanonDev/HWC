@@ -1,65 +1,68 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* ฟังก์ชันนี้รับจำนวนแถวและคอลัมน์ และสร้างพื้นที่เก็บข้อมูลแบบ dynamic
-   WHY: ต้อง return pointer เพราะ main ต้องนำข้อมูลไปใช้งานต่อ */
+/* ฟังก์ชันนี้จะสร้างพื้นที่เก็บข้อมูลตามจำนวน row และ col ที่ผู้ใช้กำหนด 
+   เลือก return เป็น pointer เพราะจำนวนสมาชิกไม่รู้ล่วงหน้า */
 int *GetMatrix(int *row, int *col)
 {
-    int r;
-    int c;
-    int i;
-    int total;
-    int *value;
+    int inputRow;
+    int inputCol;
+    int index;
+    int count;
+    int *buffer;
 
     printf("Enter number of rows: ");
-    if (scanf("%d", &r) != 1) {
-        printf("Invalid input.\n");
+    if (scanf("%d", &inputRow) != 1) {
+        printf("Invalid input\n");
         return NULL;
     }
 
     printf("Enter number of columns: ");
-    if (scanf("%d", &c) != 1) {
-        printf("Invalid input.\n");
+    if (scanf("%d", &inputCol) != 1) {
+        printf("Invalid input\n");
         return NULL;
     }
 
-    total = r * c;
+    count = inputRow * inputCol;   /* เก็บจำนวนสมาชิกทั้งหมดใน matrix */
 
-    /* WHY: ใช้ malloc เพราะจำนวนข้อมูลขึ้นอยู่กับผู้ใช้ ไม่สามารถกำหนดล่วงหน้าได้ */
-    value = malloc(total * sizeof(int));
-    if (value == NULL) {
-        printf("Allocation failed.\n");
+    buffer = malloc(count * sizeof(int));
+    if (buffer == NULL) {
+        printf("Allocation failed\n");
         return NULL;
     }
 
-    for (i = 0; i < total; i++) {
+    for (index = 0; index < count; index++) {
+        printf("Enter value %d: ", index + 1);
 
-        printf("Enter value %d: ", i + 1);
-
-        if (scanf("%d", &value[i]) != 1) {
-            printf("Invalid input.\n");
-            free(value);
+        if (scanf("%d", &buffer[index]) != 1) {
+            printf("Invalid input\n");
+            free(buffer);
             return NULL;
         }
     }
 
-    *row = r;
-    *col = c;
+    *row = inputRow;   /* ส่งค่ากลับให้ main ผ่านตัวแปร pointer */
+    *col = inputCol;
 
-    return value;
+    return buffer;
 }
 
 int main()
 {
     int *data;
-    int m;
-    int n;
+    int totalRows;
+    int totalCols;
     int index;
 
-    data = GetMatrix(&m, &n);
+    data = GetMatrix(&totalRows, &totalCols);
+
+    if (data == NULL) {
+        return 0;
+    }
 
     printf("\n--- Result ---\n");
-    for (index = 0; index < m * n; index++) {
+
+    for (index = 0; index < totalRows * totalCols; index++) {
         printf("data[%d] = %d\n", index, data[index]);
     }
 
