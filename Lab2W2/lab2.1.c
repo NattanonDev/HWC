@@ -1,3 +1,3 @@
 #include <stdio.h>
 
-void rev
+void reverse( char str1[], char str2[] );
