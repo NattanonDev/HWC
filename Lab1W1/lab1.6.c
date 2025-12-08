@@ -25,7 +25,7 @@ int *GetMatrix(int *row, int *col)
 
     count = inputRow * inputCol;   /* เก็บจำนวนสมาชิกทั้งหมดใน matrix */
 
-    buffer = malloc(count * sizeof(int));
+    buffer = malloc(count * sizeof(int)); // ขอพื้นที่เก็บ int จำนวน N(count) ช่อง
     if (buffer == NULL) {
         printf("Allocation failed\n");
         return NULL;
