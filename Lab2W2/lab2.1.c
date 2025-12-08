@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
-void reverse(char str1[], char str2[]) {
-    int len = strlen(str1);
+void reverse( char str1[], char str2[] ) {
+    int n = strlen(str1);
     int j = 0;
 
-    for (int i = len - 1; i >= 0; i--) {
+    for(int i = n-1 ; i >= 0 ; i--){
         str2[j] = str1[i];
         j++;
     }
@@ -16,7 +16,7 @@ int main() {
     char text[50];
     char out[50];
 
-    gets(text);   // ใช้ตามแนวโค้ดพื้นฐานแบบเก่า (โจทย์แนวนี้มักต้องใช้)
+    gets(text);
 
     reverse(text, out);
 
