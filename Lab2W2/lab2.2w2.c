@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-// ประกาศ function ตาม pre-code
 char* reverse( char str1[] );
 
 int main() {
