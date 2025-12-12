@@ -17,7 +17,7 @@ void reverse(char str1[], char str2[]) {
 }
 
 int main() {
-    // กำหนดข้อความสตริง
+    // กำหนดสตริงต้นทาง
     char text[50] = "I Love You";
     // ตัวแปรสำหรับเก็บสตริงที่ถูกกลับด้าน
     char out[50];
