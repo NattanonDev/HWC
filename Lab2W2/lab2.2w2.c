@@ -35,6 +35,6 @@ char* reverse( char str1[] ) {
     // ใส่ตัวจบ string
     str2[j] = '\0';
 
-    // ส่ง address ของ string ที่กลับแล้วกลับไป
+    // ส่ง address ของ string ที่กลับแล้วกลับไป (ใน main จะนำไปเก็บใน out)
     return str2;
 }
