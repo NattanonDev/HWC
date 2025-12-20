@@ -16,7 +16,7 @@ int main() {
     float profit_percent;
 
     printf("Enter Item ID: ");
-    scanf("%19s", item.item_id);
+    scanf("%19s", item.item_id);   // ✅ ไม่ต้องใส่ & เพราะเป็น array
 
     printf("Enter Cost Price per unit: ");
     scanf("%f", &item.cost_price);
@@ -27,17 +27,8 @@ int main() {
     printf("Enter Stock Quantity: ");
     scanf("%d", &item.stock_quantity);
 
-    /* เรียกใช้ Function */
-    total_profit = calculate_total_profit(
-        item.cost_price,
-        item.sell_price,
-        item.stock_quantity
-    );
-
-    profit_percent = calculate_profit_percentage(
-        item.cost_price,
-        item.sell_price
-    );
+    total_profit = calculate_total_profit(item.cost_price, item.sell_price, item.stock_quantity);
+    profit_percent = calculate_profit_percentage(item.cost_price, item.sell_price);
 
     printf("\n--- INVENTORY PROFIT REPORT ---\n");
     printf("Item ID: %s\n", item.item_id);
@@ -46,7 +37,6 @@ int main() {
     printf("Total Profit: %.2f\n", total_profit);
     printf("Profit Percentage: %.2f%%\n", profit_percent);
 
-    /* ตรวจสถานะกำไร */
     if (total_profit > 0) {
         printf("Status: Profit!\n");
     } else if (total_profit < 0) {
@@ -58,12 +48,10 @@ int main() {
     return 0;
 }
 
-/* คำนวณกำไรสุทธิ */
 float calculate_total_profit(float cost, float sell, int qty) {
     return (sell - cost) * qty;
 }
 
-/* คำนวณเปอร์เซ็นต์กำไร */
 float calculate_profit_percentage(float cost, float sell) {
     return ((sell - cost) / cost) * 100.0f;
 }
