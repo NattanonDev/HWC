@@ -38,9 +38,9 @@ int main() {
 
     printf("\n--- STUDENT ACADEMIC REPORT ---\n");
     printf("Student ID: %d\n", student_info.id);
-    printf("Math Score: %d, Science Score: %d,", student_info.math_score);
+    printf("Math Score: %d, Science Score: %d, English Score: %d", student_info.math_score);
     printf("Science Score: %d\n", student_info.science_score);
-    printf("English Score: %d\n", student_info.english_score);
+    printf(" %d\n", student_info.english_score);
     printf("Total Score: %d\n", student_info.total_score);
     printf("Average Score: %.2f\n", final_average);
     printf("Final Grade: %c\n", final_grade);
