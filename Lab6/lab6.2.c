@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void increase_value(int *number_ptr);
+void swap_value(int *number_ptr);
 
 int main() {
     int data;
