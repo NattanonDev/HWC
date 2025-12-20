@@ -1,19 +1,23 @@
 #include <stdio.h>
 
-void swap_value(int *number_ptr);
+void swap_value(int *a, int *b);
 
 int main() {
-    int data;
+    int num1;
+    int num2;
 
-    printf("Enter initial integer value: ");
-    scanf("%d", &data);
+    printf("Enter value for Num1: ");
+    scanf("%d", &num1);
 
-    printf("\n--- POINTER MODIFICATION REPORT ---\n");
-    printf("1. Value BEFORE function call: %d\n", data);
+    printf("Enter value for Num2: ");
+    scanf("%d", &num2);
 
-    increase_value(&data);
+    printf("\n--- SWAPPING REPORT ---\n");
+    printf("Before Swap - Num1: %d, Num2: %d\n", num1, num2);
 
-    printf("2. Value AFTER function call: %d\n", data);
+    swap_value(&num1,&num2);
+
+    printf("After Swap - Num1: %d, Num2: %d\n", num1, num2);
 
     return 0;
 }
