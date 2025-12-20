@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 struct Product {
-    int item_id;
+    char item_id[20];
     float cost_price;
     float sell_price;
     int stock_quantity;
