@@ -7,6 +7,8 @@ int main() {
     int data[ROWS][COLS];
     int i, j;
 
+    printf("Enter %d integer numbers for the 3x3 array:\n", ROWS * COLS);
+
     for (i = 0; i < ROWS; i++) {
         for (j = 0; j < COLS; j++) {
             scanf("%d", &data[i][j]);
