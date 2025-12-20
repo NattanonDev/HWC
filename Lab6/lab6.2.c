@@ -22,6 +22,6 @@ int main() {
     return 0;
 }
 
-void increase_value(int *number_ptr) {
+void swap_value(int *a, int *b) {
     *number_ptr = *number_ptr + 10;
 }
