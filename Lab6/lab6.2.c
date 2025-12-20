@@ -23,6 +23,9 @@ int main() {
 }
 
 void swap_value(int *a, int *b) {
-    a = a;
-    b = b;
+    int temp;
+
+    temp = *a;
+    *a = *b;
+    *b = temp;
 }
