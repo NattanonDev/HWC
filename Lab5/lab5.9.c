@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 struct Product {
-    char item_id[20];
+    int item_id;
     float cost_price;
     float sell_price;
     int stock_quantity;
@@ -15,8 +15,18 @@ int main() {
     float total_profit;
     float profit_percent;
 
+    char temp_id[20];  // เพิ่มมาแค่ตัวนี้เพื่อรับ P001
+
     printf("Enter Item ID: ");
-    scanf("%19s", item.item_id);   // ✅ ไม่ต้องใส่ & เพราะเป็น array
+    scanf("%19s", temp_id);
+
+    /* ถ้าพิมพ์แบบ P001 -> จะดึงเลข 001 มาเป็น 1 */
+    if (sscanf(temp_id, "P%d", &item.item_id) != 1) {
+        /* ถ้าพิมพ์เป็นเลขล้วน เช่น 12 ก็รับได้ */
+        if (sscanf(temp_id, "%d", &item.item_id) != 1) {
+            item.item_id = 0;  // กันค่าเพี้ยน
+        }
+    }
 
     printf("Enter Cost Price per unit: ");
     scanf("%f", &item.cost_price);
@@ -31,7 +41,7 @@ int main() {
     profit_percent = calculate_profit_percentage(item.cost_price, item.sell_price);
 
     printf("\n--- INVENTORY PROFIT REPORT ---\n");
-    printf("Item ID: %s\n", item.item_id);
+    printf("Item ID: %d\n", item.item_id);
     printf("Cost Price: %.2f, Sell Price: %.2f, Stock: %d\n",
            item.cost_price, item.sell_price, item.stock_quantity);
     printf("Total Profit: %.2f\n", total_profit);
