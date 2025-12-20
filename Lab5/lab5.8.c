@@ -38,7 +38,7 @@ int main() {
 
     printf("\n--- STUDENT ACADEMIC REPORT ---\n");
     printf("Student ID: %d\n", student_info.id);
-    printf("Math Score: %d\n", student_info.math_score);
+    printf("Math Score: %d, Science Score: ", student_info.math_score);
     printf("Science Score: %d\n", student_info.science_score);
     printf("English Score: %d\n", student_info.english_score);
     printf("Total Score: %d\n", student_info.total_score);
