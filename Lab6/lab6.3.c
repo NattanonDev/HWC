@@ -1,31 +1,31 @@
 #include <stdio.h>
 
-void swap_value(int *a, int *b);
+#define SIZE 3
 
 int main() {
-    int num1;
-    int num2;
+    int data[SIZE];
+    int *ptr;
+    int i;
 
-    printf("Enter value for Num1: ");
-    scanf("%d", &num1);
+    printf("Enter %d integer elements for the array:\n", SIZE);
+    for (i = 0; i < SIZE; i++) {
+        printf("Element %d: ", i);
+        scanf("%d", &data[i]);
+    }
 
-    printf("Enter value for Num2: ");
-    scanf("%d", &num2);
+    ptr = data;  // ptr ชี้ไปยังสมาชิกตัวแรกของ array (เท่ากับ &data[0])
 
-    printf("\n--- SWAPPING REPORT ---\n");
-    printf("Before Swap - Num1: %d, Num2: %d\n", num1, num2);
+    printf("\n--- ARRAY AND POINTER REPORT ---\n");
+    printf("Index | Value (Direct) | Value (via Pointer) | Address\n");
+    printf("------------------------------------------------------\n");
 
-    swap_value(&num1,&num2);
-
-    printf("After Swap - Num1: %d, Num2: %d\n", num1, num2);
+    for (i = 0; i < SIZE; i++) {
+        printf("%5d | %14d | %19d | %p\n",
+               i,
+               data[i],
+               *(ptr + i),
+               (void *)(ptr + i));
+    }
 
     return 0;
-}
-
-void swap_value(int *a, int *b) {
-    int temp;
-
-    temp = *a;
-    *a = *b;
-    *b = temp;
 }
