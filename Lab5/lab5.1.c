@@ -24,3 +24,12 @@ int main() {
 
     return 0;
 }
+
+/* นิยาม function calculate_area */
+int calculate_area(int length, int width) {
+    int area;
+
+    area = length * width;
+
+    return area;
+}
