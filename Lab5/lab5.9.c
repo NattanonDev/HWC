@@ -16,7 +16,7 @@ int main() {
     float profit_percent;
 
     printf("Enter Item ID: ");
-    scanf("%d", &item.item_id);
+    scanf("%19s", item.item_id);
 
     printf("Enter Cost Price per unit: ");
     scanf("%f", &item.cost_price);
