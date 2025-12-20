@@ -7,32 +7,19 @@ int main() {
     int data[ROWS][COLS];
     int i, j;
 
-
-    if (show_prompt) {
-        printf("Enter %d integer numbers for the 3x3 array:\n", ROWS * COLS);
-    }
-
     for (i = 0; i < ROWS; i++) {
         for (j = 0; j < COLS; j++) {
-            if (show_prompt) {
-                printf("Enter element for Row %d, Col %d: ", i, j);
-            }
             scanf("%d", &data[i][j]);
         }
     }
 
-    printf("\n--- TWO-DIMENSIONAL ARRAY REPORT ---\n");
+    printf("--- TWO-DIMENSIONAL ARRAY REPORT ---\n");
     printf("Array Size: %d Rows x %d Columns\n", ROWS, COLS);
     printf("Content (Table Format):\n");
 
-    /* แสดงผลเป็นตาราง 3x3 */
     for (i = 0; i < ROWS; i++) {
         for (j = 0; j < COLS; j++) {
-            if (j == COLS - 1) {
-                printf("%d", data[i][j]);   /* ตัวสุดท้ายของแถว ไม่เว้นวรรคท้าย */
-            } else {
-                printf("%d ", data[i][j]);
-            }
+            printf("%d ", data[i][j]);
         }
         printf("\n");
     }
