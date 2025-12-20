@@ -11,7 +11,7 @@ int main() {
     float win_probability;       // โอกาสชนะ (%)
 
     // กำหนดค่า Outs ตามโจทย์ (ได้ Pair จาก 9 หรือ K)
-    card_outs = 6;
+    card_outs = 9;
 
     // เรียกใช้ฟังก์ชันเพื่อคำนวณโอกาสชนะ
     win_probability = calculate_win_odds(card_outs);
