@@ -40,7 +40,7 @@ int main() {
     );
 
     printf("\n--- INVENTORY PROFIT REPORT ---\n");
-    printf("Item ID: %d\n", item.item_id);
+    printf("Item ID: %s\n", item.item_id);
     printf("Cost Price: %.2f, Sell Price: %.2f, Stock: %d\n",
            item.cost_price, item.sell_price, item.stock_quantity);
     printf("Total Profit: %.2f\n", total_profit);
