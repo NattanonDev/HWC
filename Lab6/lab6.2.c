@@ -23,5 +23,6 @@ int main() {
 }
 
 void swap_value(int *a, int *b) {
-    *number_ptr = *number_ptr + 10;
+    a = a;
+    b = b;
 }
