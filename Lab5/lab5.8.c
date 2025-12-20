@@ -28,13 +28,11 @@ int main() {
     printf("Enter English Score (out of 100): ");
     scanf("%d", &student_info.english_score);
 
-    /* คำนวณคะแนนรวม */
     student_info.total_score =
         student_info.math_score +
         student_info.science_score +
         student_info.english_score;
 
-    /* เรียกใช้ Function */
     final_grade = calculate_grade(student_info.total_score);
     calculate_average(student_info.total_score, &final_average);
 
@@ -48,4 +46,18 @@ int main() {
     printf("Final Grade: %c\n", final_grade);
 
     return 0;
+}
+
+char calculate_grade(int total_score) {
+    if (total_score >= 250) {
+        return 'A';
+    } else if (total_score >= 200) {
+        return 'B';
+    } else {
+        return 'C';
+    }
+}
+
+void calculate_average(int total_score, float *avg) {
+    *avg = (float)total_score / 3;
 }
