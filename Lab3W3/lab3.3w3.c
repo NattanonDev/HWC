@@ -15,7 +15,7 @@ int main() {
     aboy.sex = 'M';
     aboy.gpa = 3.00;
 
-    upgrade(aboy);
+    aboy = upgrade(aboy);
 
     printf("%.2f", aboy.gpa);
     return 0;
