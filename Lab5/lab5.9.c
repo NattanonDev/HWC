@@ -15,7 +15,7 @@ int main() {
     float total_profit;
     float profit_percent;
 
-    char temp_id[20];  // เพิ่มมาแค่ตัวนี้เพื่อรับ P001
+    char temp_id[20];  // เพิ่มมาแค่ตัวนี้เพื่อรับ P*
 
     printf("Enter Item ID: ");
     scanf("%19s", temp_id);
