@@ -6,7 +6,7 @@ int main() {
     int card_outs;               // จำนวน Outs
     float win_probability;       // โอกาสชนะ (%)
 
-    // กำหนดค่า Outs ตามโจทย์ (ได้ Pair จาก 9 หรือ K)
+    // กำหนดค่า Outs (ได้ Pair จาก 9 หรือ K)
     card_outs = 6;
 
     // เรียกใช้ฟังก์ชันเพื่อคำนวณโอกาสชนะ
@@ -28,9 +28,6 @@ int main() {
     return 0;
 }
 
-/* ฟังก์ชันคำนวณโอกาสชนะ
-   ใช้ Type Casting เพื่อให้ได้ค่าทศนิยม
-*/
 float calculate_win_odds(int outs) {
     return (float)outs * 4;
 }
