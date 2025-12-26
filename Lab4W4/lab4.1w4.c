@@ -1,7 +1,8 @@
 #include <stdio.h>
 
-void go(int **p,int)
+void go(int **p,int *z);
 
 int main() {
-
+    int *a, b = 10, c = 20;
+    
 }
