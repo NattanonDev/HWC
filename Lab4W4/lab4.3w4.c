@@ -36,11 +36,8 @@ int main(void) {
     now2 = &start;
 
     GoNext1(now1);
-
-    /* จุดสังเกต: now1 ไม่เปลี่ยน เพราะ GoNext1 รับ pointer แบบ call by value */
     printf("now1 still points to: %s\n", now1->name);
 
-    /* (ไม่ได้ free เพื่อให้สั้นตามแลป แต่ทำจริงควร free ไล่ทีละโหนด) */
     return 0;
 }
 
