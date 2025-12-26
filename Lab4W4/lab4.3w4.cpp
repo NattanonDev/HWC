@@ -64,6 +64,6 @@ void GoNext1(studentNode *walk) {
         return;
     }
 
-    walk = walk->next; // เปลี่ยนได้แค่ walk ในฟังก์ชัน
+    walk = walk->next;
     std::printf("Inside GoNext1 -> walk = %s\n", walk->name);
 }
