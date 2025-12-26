@@ -46,7 +46,7 @@ void SaveNode(struct studentNode *child, char n[], int a, char s, float g) {
     child->age = a;
     child->sex = s;
     child->gpa = g;
-    child->next = NULL; /* กันหลุดถ้ายังไม่ได้ต่อ */
+    child->next = NULL;
 }
 
 void GoNext1(struct studentNode *walk) {
@@ -60,6 +60,6 @@ void GoNext1(struct studentNode *walk) {
         return;
     }
 
-    walk = walk->next; /* เปลี่ยนได้แค่ walk ในฟังก์ชัน */
+    walk = walk->next;
     printf("Inside GoNext1 -> moved to: %s\n", walk->name);
 }
