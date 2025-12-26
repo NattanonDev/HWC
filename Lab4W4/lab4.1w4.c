@@ -14,5 +14,7 @@ int main(void) {
     return 0;
 }
 
-void go (int *)
+void go (int **p,int *z){
+    *p = z;
+}
 
