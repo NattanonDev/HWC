@@ -1,9 +1,5 @@
 #include <stdio.h>
 
-/* ฟังก์ชันคำนวณโอกาสชนะ (Odds)
-   ใช้สูตร Odds = Outs x 4
-   ส่งกลับค่าเป็นเปอร์เซ็นต์ (float)
-*/
 float calculate_win_odds(int outs);
 
 int main() {
