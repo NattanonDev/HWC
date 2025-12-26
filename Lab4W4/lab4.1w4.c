@@ -10,3 +10,4 @@ int main() {
     printf("%d %p %p", *a, a, &a);
     return 0;
 }
+
