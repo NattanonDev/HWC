@@ -30,14 +30,12 @@ int main() {
     start->next->next->next->next = nullptr;  // ปิดท้าย list
 
     now1 = start;
-    now2 = &start; // มีไว้ตามโจทย์ (แต่ GoNext1 ยังไม่ใช้)
+    now2 = &start;
 
     GoNext1(now1);
 
-    // สังเกต: now1 ไม่เปลี่ยน (ยังชี้ "one")
     std::printf("After GoNext1 -> now1 = %s\n", now1->name);
 
-    // ลบหน่วยความจำ (ไล่ลบทั้ง list)
     studentNode *cur = start;
     while (cur != nullptr) {
         studentNode *tmp = cur->next;
