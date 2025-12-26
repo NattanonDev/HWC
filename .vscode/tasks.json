@@ -4,7 +4,7 @@
         {
             "label": "build with gcc",
             "type": "shell",
-            "command": "gcc",
+            "command": "g++",
             "args": [
                 "-std=c99",
                 "${file}",
