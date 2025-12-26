@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* โครงสร้างข้อมูลนักศึกษา */
+/* ข้อมูลนักศึกษา */
 struct Student {
     int student_id;
     int score;
