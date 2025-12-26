@@ -15,7 +15,7 @@ void GoNext1(struct studentNode *walk);
 
 int main(void) {
     struct studentNode *start, *now1;
-    struct studentNode **now2; /* โจทย์ให้มา แต่ GoNext1 ยังใช้ไม่ได้ */
+    struct studentNode **now2; 
 
     start = (struct studentNode *)malloc(sizeof(struct studentNode));
     SaveNode(start, "one", 6, 'M', 3.11);
