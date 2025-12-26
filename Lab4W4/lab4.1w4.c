@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+/* Prototype */
 void go(int **p,int *z);
 
 int main(void) {
