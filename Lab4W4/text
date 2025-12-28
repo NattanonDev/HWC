@@ -1,0 +1,280 @@
+<div class="container">
+        <br>
+        <nav style="--bs-breadcrumb-divider: url(
+    &quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'
+    %3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&quot;);" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/coding/home">หน้าแรก</a></li><li class="breadcrumb-item"><a href="#">Quiz</a></li><li class="breadcrumb-item active" aria-current="page">PRE - ENGCE117 สัปดาห์ 5</li>
+  </ol>
+</nav>
+        <br>
+        <div class="d-flex align-items-center justify-content-between mb-3">
+  <div>
+    <h1 class="h5 mb-0">PRE • ENGCE117 • สัปดาห์ 5</h1>
+    <div class="text-muted">Single Linked List</div>
+  </div>
+</div>
+
+
+<form method="POST" class="card">
+  <div class="card-body">
+    
+  <div class="mb-3">
+    <div class="fw-semibold">1. ตามเนื้อหาที่ให้มา เหตุผลหลักของการใช้พอยน์เตอร์ 2 ระดับ (pointer to a pointer) สำหรับ `walk` ในฟังก์ชัน `AddNode` คืออะไร</div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q0" id="q0_0" value="0" required="">
+        <label class="form-check-label" for="q0_0">เพื่อสร้างโหนดใหม่ต่อท้ายลิงค์ลิสต์</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q0" id="q0_1" value="1" required="">
+        <label class="form-check-label" for="q0_1">เพื่อให้สามารถแก้ไขค่าของพอยน์เตอร์ `start` ได้โดยตรง ในกรณีที่ลิงค์ลิสต์เริ่มต้นว่างเปล่า</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q0" id="q0_2" value="2" required="">
+        <label class="form-check-label" for="q0_2">เพื่อให้สามารถท่องไปในลิสต์ (traverse) ได้รวดเร็วยิ่งขึ้น</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q0" id="q0_3" value="3" required="">
+        <label class="form-check-label" for="q0_3">เพื่อทำให้พอยน์เตอร์ `now` ชี้ไปยังโหนดใหม่ได้</label>
+      </div>
+  </div>
+  <div class="mb-3">
+    <div class="fw-semibold">2. ข้อใดคือความแตกต่างหลักในเชิงฟังก์ชันการทำงานระหว่าง `AddNode` และ `InsertNode` ตามที่เอกสารอธิบายไว้</div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q1" id="q1_0" value="0" required="">
+        <label class="form-check-label" for="q1_0">`AddNode` ใช้สำหรับลิสต์ที่ว่างเปล่าเท่านั้น ในขณะที่ `InsertNode` ใช้สำหรับลิสต์ที่มีโหนดอยู่แล้ว</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q1" id="q1_1" value="1" required="">
+        <label class="form-check-label" for="q1_1">`AddNode` ใช้พอยน์เตอร์ 2 ระดับเสมอ ในขณะที่ `InsertNode` ใช้พอยน์เตอร์ 1 ระดับเสมอ</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q1" id="q1_2" value="2" required="">
+        <label class="form-check-label" for="q1_2">`AddNode` จะทำการเพิ่มโหนดใหม่ต่อท้ายลิงค์ลิสต์เสมอ ในขณะที่ `InsertNode` จะแทรกโหนดใหม่ต่อจากโหนดปัจจุบัน (now)</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q1" id="q1_3" value="3" required="">
+        <label class="form-check-label" for="q1_3">`InsertNode` ทำงานได้เร็วกว่า `AddNode` เพราะไม่ต้องวิ่งหาโหนดสุดท้าย</label>
+      </div>
+  </div>
+  <div class="mb-3">
+    <div class="fw-semibold">3. จากเอกสาร การใช้พอยน์เตอร์ 2 ระดับในฟังก์ชัน `InsertNode` ทำให้เกิดความสามารถใดเพิ่มเติมขึ้นมา เมื่อเทียบกับการใช้พอยน์เตอร์ 1 ระดับ</div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q2" id="q2_0" value="0" required="">
+        <label class="form-check-label" for="q2_0">สามารถเก็บโหนดเก่าไว้ในพอยน์เตอร์ `temp` ได้</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q2" id="q2_1" value="1" required="">
+        <label class="form-check-label" for="q2_1">สามารถแทรกโหนดใหม่เพื่อแทนที่โหนดปัจจุบันได้</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q2" id="q2_2" value="2" required="">
+        <label class="form-check-label" for="q2_2">สามารถแทรกโหนดใหม่ที่จุดเริ่มต้นของลิสต์ได้</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q2" id="q2_3" value="3" required="">
+        <label class="form-check-label" for="q2_3">ทำให้โค้ดทำงานโดยใช้หน่วยความจำน้อยลง</label>
+      </div>
+  </div>
+  <div class="mb-3">
+    <div class="fw-semibold">4. ข้อจำกัดหลักของการใช้พอยน์เตอร์ 1 ระดับสำหรับ `walk` ในฟังก์ชัน `DeleteNode` ตามที่นำเสนอคืออะไร</div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q3" id="q3_0" value="0" required="">
+        <label class="form-check-label" for="q3_0">ไม่สามารถลบโหนดปัจจุบันที่ `now` ชี้อยู่ได้</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q3" id="q3_1" value="1" required="">
+        <label class="form-check-label" for="q3_1">จำเป็นต้องใช้พอยน์เตอร์ชั่วคราว (`temp`) มากกว่าหนึ่งตัว</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q3" id="q3_2" value="2" required="">
+        <label class="form-check-label" for="q3_2">ทำงานได้ช้ากว่าการใช้พอยน์เตอร์ 2 ระดับ</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q3" id="q3_3" value="3" required="">
+        <label class="form-check-label" for="q3_3">ไม่สามารถลบโหนดสุดท้ายของลิสต์ได้</label>
+      </div>
+  </div>
+  <div class="mb-3">
+    <div class="fw-semibold">5. ในกระบวนการ `AddNode` หลังจากที่พอยน์เตอร์ `walk` หาโหนดสุดท้ายเจอแล้ว ลำดับการทำงานในข้อใดถูกต้องที่สุดตามที่แสดงในแผนภาพสรุป</div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q4" id="q4_0" value="0" required="">
+        <label class="form-check-label" for="q4_0">อัปเดต now (4), สร้างโหนดใหม่ (2), กำหนด next เป็น NULL (3), เชื่อมโหนดสุดท้าย</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q4" id="q4_1" value="1" required="">
+        <label class="form-check-label" for="q4_1">กำหนด next ของโหนดสุดท้ายเป็น NULL (3), สร้างโหนดใหม่ (2), เชื่อมโหนด, อัปเดต now (4)</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q4" id="q4_2" value="2" required="">
+        <label class="form-check-label" for="q4_2">สร้างโหนดใหม่และให้โหนดสุดท้ายเดิมชี้ไป (2), กำหนด next ของโหนดใหม่เป็น NULL (3), อัปเดต now (4)</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q4" id="q4_3" value="3" required="">
+        <label class="form-check-label" for="q4_3">สร้างโหนดใหม่ (2), อัปเดต now (4), เชื่อมโหนด, กำหนด next เป็น NULL (3)</label>
+      </div>
+  </div>
+  <div class="mb-3">
+    <div class="fw-semibold">6. ในการดำเนินการของ `InsertNode` พอยน์เตอร์ `temp` มีบทบาทสำคัญอย่างไร</div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q5" id="q5_0" value="0" required="">
+        <label class="form-check-label" for="q5_0">เพื่อทำหน้าที่เป็นสำเนาของพอยน์เตอร์ `walk` สำหรับการท่องไปในลิสต์</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q5" id="q5_1" value="1" required="">
+        <label class="form-check-label" for="q5_1">เพื่อเก็บข้อมูลของโหนดใหม่ก่อนที่จะถูกสร้างขึ้น</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q5" id="q5_2" value="2" required="">
+        <label class="form-check-label" for="q5_2">เพื่อตรวจสอบว่ามีหน่วยความจำเพียงพอสำหรับสร้างโหนดใหม่หรือไม่</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q5" id="q5_3" value="3" required="">
+        <label class="form-check-label" for="q5_3">เพื่อเก็บการอ้างอิงไปยังส่วนที่เหลือของลิสต์ (โหนดที่อยู่ถัดจากจุดที่จะแทรก) ไว้ชั่วคราว</label>
+      </div>
+  </div>
+  <div class="mb-3">
+    <div class="fw-semibold">7. ข้อใดคือความสามารถที่สำคัญที่สุดที่ได้จากการใช้พอยน์เตอร์ 2 ระดับ ในฟังก์ชัน `DeleteNode`</div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q6" id="q6_0" value="0" required="">
+        <label class="form-check-label" for="q6_0">ทำให้การคืนหน่วยความจำของโหนดที่ถูกลบมีประสิทธิภาพมากขึ้น</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q6" id="q6_1" value="1" required="">
+        <label class="form-check-label" for="q6_1">ทำให้สามารถลบโหนดแรกสุดของลิสต์ได้</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q6" id="q6_2" value="2" required="">
+        <label class="form-check-label" for="q6_2">ลดความจำเป็นในการใช้พอยน์เตอร์ `temp`</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q6" id="q6_3" value="3" required="">
+        <label class="form-check-label" for="q6_3">ทำให้สามารถลบโหนดปัจจุบันที่พอยน์เตอร์ชี้อยู่ได้โดยตรง</label>
+      </div>
+  </div>
+  <div class="mb-3">
+    <div class="fw-semibold">8. ในขั้นตอนที่ 1 ของ `AddNode` ที่ระบุว่า "ให้ walk ไล่ไปหาโหนดสุดท้ายให้เจอ" โดยทั่วไปแล้วเงื่อนไขในการวนลูปเพื่อหาโหนดสุดท้ายคืออะไร</div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q7" id="q7_0" value="0" required="">
+        <label class="form-check-label" for="q7_0">วนลูปจนกว่า `walk` จะมีค่าเป็น NULL</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q7" id="q7_1" value="1" required="">
+        <label class="form-check-label" for="q7_1">วนลูปจนกว่า `walk-&gt;next` จะมีค่าเป็น NULL</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q7" id="q7_2" value="2" required="">
+        <label class="form-check-label" for="q7_2">วนลูปจนกว่า `walk` จะมีค่าเท่ากับ `now`</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q7" id="q7_3" value="3" required="">
+        <label class="form-check-label" for="q7_3">วนลูปจนกว่า `walk-&gt;data` จะมีค่าเป็น NULL</label>
+      </div>
+  </div>
+  <div class="mb-3">
+    <div class="fw-semibold">9. จากแผนภาพของ `InsertNode` หลังจากที่โหนดปัจจุบัน (walk) ถูกเปลี่ยนให้ชี้ไปยังโหนดใหม่แล้ว (ขั้นตอนที่ 2) จะต้องทำอะไรเป็นลำดับถัดไป (ขั้นตอนที่ 3) เพื่อให้ลิสต์ยังคงสมบูรณ์</div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q8" id="q8_0" value="0" required="">
+        <label class="form-check-label" for="q8_0">ลบข้อมูลใน `temp` ทิ้งเพื่อคืนหน่วยความจำ</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q8" id="q8_1" value="1" required="">
+        <label class="form-check-label" for="q8_1">ให้ `start` ชี้มาที่โหนดใหม่</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q8" id="q8_2" value="2" required="">
+        <label class="form-check-label" for="q8_2">ให้ `temp` ชี้ไปที่โหนดใหม่</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q8" id="q8_3" value="3" required="">
+        <label class="form-check-label" for="q8_3">ให้พอยน์เตอร์ `next` ของโหนดใหม่ ชี้ไปที่ `temp`</label>
+      </div>
+  </div>
+  <div class="mb-3">
+    <div class="fw-semibold">10. พิจารณาการทำงานของ `DeleteNode` ที่ใช้พอยน์เตอร์ 1 ระดับ (`walk`) ตามแผนภาพ การดำเนินการใน "Step 2" คือการทำอะไร</div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q9" id="q9_0" value="0" required="">
+        <label class="form-check-label" for="q9_0">เปลี่ยนให้ `walk` ชี้ไปยังตำแหน่งเดียวกับ `temp`</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q9" id="q9_1" value="1" required="">
+        <label class="form-check-label" for="q9_1">เปลี่ยนให้ `walk-&gt;next` ชี้ไปยังโหนดเดียวกันกับที่ `temp-&gt;next` ชี้อยู่</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q9" id="q9_2" value="2" required="">
+        <label class="form-check-label" for="q9_2">เปลี่ยนให้ `temp-&gt;next` ชี้ไปยัง `walk`</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q9" id="q9_3" value="3" required="">
+        <label class="form-check-label" for="q9_3">คัดลอกข้อมูลจาก `temp-&gt;next` มาไว้ที่ `walk-&gt;next`</label>
+      </div>
+  </div>    <div class="d-flex gap-2">
+      <button class="btn btn-primary">ส่งคำตอบ</button>
+      <a class="btn btn-outline-secondary" href="/coding/course/engce117">กลับรายวิชา</a>
+    </div>
+  </div>
+</form>
+
+<script>
+  // เมื่อหน้าโดนโหลดจาก back/forward cache (user กดปุ่ม Back ของ browser)
+  window.addEventListener('pageshow', function (event) {
+    try {
+      var navEntries = performance.getEntriesByType("navigation");
+      var navType = navEntries && navEntries.length ? navEntries[0].type : null;
+
+      if (event.persisted || navType === "back_forward") {
+        // รีเซ็ตฟอร์มทั้งหมดบนหน้านี้
+        document.querySelectorAll('form').forEach(function (form) {
+          form.reset();
+        });
+
+        // ถ้ามี input พิเศษอื่น ๆ อยากเคลียร์เพิ่ม ก็ทำในนี้ได้
+        // เช่น: ล้าง radio/checkbox manual (บาง browser ดื้อ)
+        // document.querySelectorAll('input[type=radio], input[type=checkbox]').forEach(function (el) {
+        //   el.checked = false;
+        // });
+      }
+    } catch (e) {
+      // เงียบไป ไม่ให้ user เห็น error JS
+      console && console.warn && console.warn(e);
+    }
+  });
+
+
+// ป้องกันการคัดลอกและคลิกขวา
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault(); // ป้องกันการเปิดเมนูคลิกขวา
+  });
+
+  document.addEventListener('keydown', function(e) {
+    // ป้องกัน Ctrl+C, Ctrl+X, Ctrl+A (select all)
+    // NOTE: บางเบราว์เซอร์อาจใช้ Cmd แทน Ctrl บน Mac
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'x' || e.key === 'a')) {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('copy', function(e) {
+    e.preventDefault(); // ป้องกันการคัดลอกเมื่อมี Selection และกด Ctrl+C/Cmd+C
+  });
+
+  // ป้องกันการเลือกข้อความ (Selection)
+  document.body.onselectstart = function() {
+    return false;
+  };
+
+</script>
+
+
+
+    </div>
