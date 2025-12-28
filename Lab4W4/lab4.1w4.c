@@ -18,4 +18,3 @@ int main(void) {
 void go (int **p,int *z){
     *p = z;
 }
-
