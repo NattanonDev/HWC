@@ -1,85 +1,162 @@
+/***************************
+ *        Include
+ ***************************/
 #include <cstdio>
 #include <cstring>
 
+/*
+  ใช้ printf สำหรับแสดงผล
+  ใช้ strcpy สำหรับคัดลอกชื่อ
+*/
+
+
+/***************************
+ *         Struct
+ ***************************/
 struct studentNode {
-    char name[20];
-    int age;
-    char sex;
-    float gpa;
-    studentNode *next;
+    char name[20];     // ชื่อ
+    int age;           // อายุ
+    char sex;          // เพศ
+    float gpa;         // เกรดเฉลี่ย
+    studentNode *next; // ชี้ไปโหนดถัดไป
 };
 
-void ShowAll1(studentNode *walk);
+/*
+  โครงสร้างของ singly linked list
+  next ใช้เชื่อมโหนดเข้าด้วยกัน
+*/
 
-studentNode* AddNode(studentNode **start, const char n[], int a, char s, float g);
-void InsNode(studentNode *now, const char n[], int a, char s, float g);
-void DelNode(studentNode *now);
 
-static void SaveNode(studentNode *child, const char n[], int a, char s, float g);
+/***************************
+ *        Prototype
+ ***************************/
+void ShowAll(struct studentNode *walk);
 
+studentNode* AddNode(struct studentNode **start,
+                     const char n[], int a, char s, float g);
+
+void InsNode(struct studentNode *now,
+             const char n[], int a, char s, float g);
+
+void DelNode(struct studentNode *now);
+
+static void SaveNode(struct studentNode *child,
+                     const char n[], int a, char s, float g);
+
+/*
+  Prototype แยกไว้ด้านบน
+  เพื่อให้ main เรียกใช้ฟังก์ชันได้
+*/
+
+
+/***************************
+ *           Main
+ ***************************/
 int main() {
     studentNode *start, *now;
-    start = NULL;
 
-    now = AddNode(&start, "one", 6, 'M', 3.11f);   ShowAll1(start);
-    now = AddNode(&start, "two", 8, 'F', 3.22f);   ShowAll1(start);
+    start = NULL;   // ลิสต์เริ่มต้นว่าง
 
-    InsNode(now, "three", 10, 'M', 3.33f);         ShowAll1(start);
-    InsNode(now, "four", 12, 'F', 3.44f);          ShowAll1(start);
+    // เพิ่มโหนดต่อท้าย
+    now = AddNode(&start, "one", 6, 'M', 3.11f);
+    ShowAll(start);
 
-    DelNode(now);                                   ShowAll1(start);
+    now = AddNode(&start, "two", 8, 'F', 3.22f);
+    ShowAll(start);
+
+    // แทรกโหนดต่อจากตำแหน่ง now
+    InsNode(now, "three", 10, 'M', 3.33f);
+    ShowAll(start);
+
+    InsNode(now, "four", 12, 'F', 3.44f);
+    ShowAll(start);
+
+    // ลบโหนดที่อยู่ถัดจาก now
+    DelNode(now);
+    ShowAll(start);
 
     return 0;
 }
 
-void ShowAll1(studentNode *walk) {
+/*
+  main ทำหน้าที่ควบคุมลำดับการทำงาน
+  start เก็บจุดเริ่มต้นของลิสต์
+  now เก็บตำแหน่งปัจจุบัน
+*/
+
+
+/***************************
+ *         Function
+ ***************************/
+void ShowAll(struct studentNode *walk) {
     while (walk != NULL) {
-        std::printf("%s ", walk->name);
+        printf("%s ", walk->name);
         walk = walk->next;
     }
-    std::printf("\n");
+    printf("\n");
 }
 
-static void SaveNode(studentNode *child, const char n[], int a, char s, float g) {
-    std::strcpy(child->name, n);
+/*
+  แสดงข้อมูลทุกโหนด
+  ใช้ walk เดินไปทีละโหนดจนสุดลิสต์
+*/
+
+
+static void SaveNode(struct studentNode *child,
+                     const char n[], int a, char s, float g) {
+    strcpy(child->name, n);
     child->age = a;
     child->sex = s;
     child->gpa = g;
     child->next = NULL;
 }
 
-/* เพิ่มโหนดท้ายลิสต์ และคืน pointer โหนดใหม่ */
-studentNode* AddNode(studentNode **start, const char n[], int a, char s, float g) {
+/*
+  ฟังก์ชันช่วยใส่ข้อมูลให้โหนด
+  แยกไว้เพื่อไม่ให้โค้ดซ้ำ
+*/
+
+
+studentNode* AddNode(struct studentNode **start,
+                     const char n[], int a, char s, float g) {
     studentNode *node = new studentNode;
     SaveNode(node, n, a, s, g);
 
-    if (*start == NULL) {      // ลิสต์ว่าง
-        *start = node;
-        return node;
+    // ใช้ pointer เดินไปจนเจอท้ายลิสต์
+    studentNode **walk = start;
+    while (*walk != NULL) {
+        walk = &((*walk)->next);
     }
 
-    studentNode *walk = *start;
-    while (walk->next != NULL) {
-        walk = walk->next;
-    }
-    walk->next = node;
-    return node;
+    *walk = node;   // ต่อโหนดใหม่ท้ายลิสต์
+    return node;    // คืนโหนดใหม่ให้ now
 }
 
-/* แทรกโหนดใหม่ต่อจาก now */
-void InsNode(studentNode *now, const char n[], int a, char s, float g) {
+/*
+  AddNode เพิ่มโหนดใหม่ที่ท้ายลิสต์
+  ต้องใช้ pointer 2 ระดับเพื่อแก้ start ได้
+*/
+
+
+void InsNode(struct studentNode *now,
+             const char n[], int a, char s, float g) {
     if (now == NULL) return;
 
     studentNode *node = new studentNode;
     SaveNode(node, n, a, s, g);
 
-    studentNode *temp = now->next;
+    // แทรกโหนดใหม่หลัง now
+    node->next = now->next;
     now->next = node;
-    node->next = temp;
 }
 
-/* ลบโหนดที่อยู่ "ถัดจาก now" */
-void DelNode(studentNode *now) {
+/*
+  InsNode ใช้แทรกโหนดต่อจากตำแหน่งปัจจุบัน
+  ต้องเก็บ next เดิมไว้ก่อน ไม่งั้นลิสต์ขาด
+*/
+
+
+void DelNode(struct studentNode *now) {
     if (now == NULL) return;
     if (now->next == NULL) return;
 
@@ -87,3 +164,8 @@ void DelNode(studentNode *now) {
     now->next = temp->next;
     delete temp;
 }
+
+/*
+  DelNode ลบโหนดที่อยู่ถัดจาก now
+  ปรับลิงก์ก่อน แล้วค่อยคืนหน่วยความจำ
+*/
