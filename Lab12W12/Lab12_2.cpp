@@ -12,7 +12,7 @@ int main() {
     int *x = KnapsackGreedy(w, v, n, wx);
 
     for(int i = 0; i < n; i++)
-        printf("%d", x[i]);
+        printf("%d ", x[i]);
 
     delete [] x;
     return 0;
