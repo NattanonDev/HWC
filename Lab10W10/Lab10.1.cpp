@@ -1,11 +1,6 @@
-// Online C++ Compiler - Build, Compile and Run your C++ programs online in your favorite browser
+#include <stdio.h>
 
-#include<iostream>
-
-using namespace std;
-
-int main()
-{
-    cout<<"Welcome to Online IDE!! Happy Coding :)";
+int main() {
+    printf("Hello C\n");
     return 0;
 }
